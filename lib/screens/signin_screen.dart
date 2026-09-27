@@ -1,5 +1,8 @@
+import 'package:anime_verse/config/routes.dart';
+import 'package:anime_verse/screens/home_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:go_router/go_router.dart';
 import '../widgets/app_scaffold.dart';
 
 class SignInScreen extends StatelessWidget {
@@ -150,6 +153,9 @@ class SignInScreen extends StatelessWidget {
                         child: ElevatedButton(
                           onPressed: () {
                             // TODO: Implement sign in functionality
+                            context.go(AppRoutes.home);
+                            Navigator.of(context).pushReplacement(
+                                MaterialPageRoute(builder: (context) => const HomeScreen()));
                           },
                           style: ElevatedButton.styleFrom(
                             backgroundColor: Colors.blue.withValues(alpha: 0.8),
@@ -250,6 +256,7 @@ class SignInScreen extends StatelessWidget {
                           ),
                           TextButton(
                             onPressed: () {
+                              context.go(AppRoutes.signUp);
                               // TODO: Navigate to sign up screen
                             },
                             child: Text(
